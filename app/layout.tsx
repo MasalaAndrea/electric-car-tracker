@@ -3,7 +3,7 @@
 import type React from "react";
 import type { Metadata } from "next";
 
-// Importazioni di font  commentate per risolvere il problema di next/font
+// Importazioni di font commentate per risolvere il problema di next/font
 // import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -16,8 +16,6 @@ export const metadata: Metadata = {
   manifest: "/manifest.json", // Questo gestisce automaticamente il link al manifest
   generator: 'v0.dev',
 
-  // Aggiungi qui le meta tag PWA e le icone Apple direttamente nell'oggetto metadata
-  // Next.js le inietterà correttamente nel <head>
   themeColor: "#3b82f6", // Colore del tema
   appleWebApp: { // Configurazione per iOS (sostituisce apple-mobile-web-app-capable, ecc.)
     capable: true,
@@ -30,8 +28,9 @@ export const metadata: Metadata = {
     // ],
   },
   icons: {
-    icon: '/icon-192.png', // Icona predefinita
-    apple: '/icon-192.png', // Icona per Apple (apple-touch-icon)
+    // AGGIORNA QUESTI PERCORSI PER CORRISPONDERE AI TUOI NOMI DI FILE REALI
+    icon: '/android-chrome-192x192.png', // Icona predefinita
+    apple: '/android-chrome-192x192.png', // Icona per Apple (apple-touch-icon)
   }
 };
 
