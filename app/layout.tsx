@@ -3,7 +3,7 @@
 import type React from "react";
 import type { Metadata } from "next";
 
-// Importazioni di font commentate per risolvere il problema di next/font
+// Importazioni di font  commentate per risolvere il problema di next/font
 // import { Inter } from "next/font/google";
 import "./globals.css";
 
