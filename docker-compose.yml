@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  nextjs-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000" # Mappa la porta 3000 del container alla porta 3000 del tuo host
+    volumes:
+      - .:/app # Monta la directory corrente del tuo progetto nel container
+      - /app/node_modules # Evita che node_modules venga sovrascritto dal mount del volume
+      - /app/.next # Evita che .next venga sovrascritto dal mount del volume
+    environment:
+      # Imposta le variabili d'ambiente necessarie per Next.js in sviluppo
+      NODE_ENV: development
+    command: npm run dev # Comando per avviare l'applicazione Next.js in sviluppo
