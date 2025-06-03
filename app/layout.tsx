@@ -3,11 +3,11 @@
 import type React from "react";
 import type { Metadata } from "next";
 
-// Importazioni di font commentate per risolvere il problema di next/font
+// Rimuovi o commenta completamente le importazioni di font se non strettamente necessarie per evitare problemi di build/hydration
 // import { Inter } from "next/font/google";
 import "./globals.css";
 
-// Definizione del font commentata
+// Rimuovi o commenta la definizione del font se non strettamente necessaria
 // const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,19 +16,13 @@ export const metadata: Metadata = {
   manifest: "/manifest.json", // Questo gestisce automaticamente il link al manifest
   generator: 'v0.dev',
 
-  themeColor: "#3b82f6", // Colore del tema
-  appleWebApp: { // Configurazione per iOS (sostituisce apple-mobile-web-app-capable, ecc.)
+  themeColor: "#3b82f6", // Colore del tema per la PWA
+  appleWebApp: { // Configurazione per iOS PWA
     capable: true,
     statusBarStyle: 'default',
     title: 'ChargeLog',
-    // Per le icone Apple, puoi specificarle qui o lasciarle nel manifest se next-pwa le gestisce
-    // Se vuoi una specifica apple-touch-icon, puoi aggiungerla qui:
-    // startupImage: [
-    //   '/icon-192.png', // Esempio: assicurati che il percorso sia corretto
-    // ],
   },
-  icons: {
-    // AGGIORNA QUESTI PERCORSI PER CORRISPONDERE AI TUOI NOMI DI FILE REALI
+  icons: { // Icone per la PWA e Apple Touch Icon
     icon: '/android-chrome-192x192.png', // Icona predefinita
     apple: '/android-chrome-192x192.png', // Icona per Apple (apple-touch-icon)
   }
@@ -40,8 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // Rimuovi className={inter.className} dal body
-    // Se vuoi usare un font standard, puoi rimuovere la classe o definirne una tua nel CSS
+    // Assicurati che non ci siano riferimenti a `inter.className` se hai rimosso l'importazione del font
     <html lang="it">
       <body>{children}</body>
     </html>
