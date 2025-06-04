@@ -1,9 +1,11 @@
 // next.config.mjs
 
+// Importa 'withPWA' usando la sintassi ES Module
 import withPWA from 'next-pwa';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Le tue configurazioni Next.js esistenti
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -13,12 +15,14 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Aggiungi qui altre tue configurazioni se ne avessi in futuro
 };
 
+// --- Inizio configurazione next-pwa ---
 const pwaConfig = withPWA({
-  dest: 'public',
-  register: true,
-  skipWaiting: true,
+  dest: 'public', // Questo dice a next-pwa dove mettere i file generati (manifest, sw.js)
+  register: true, // Questo farà sì che next-pwa registri automaticamente il service worker
+  skipWaiting: true, // Il nuovo service worker prenderà il controllo immediatamente
   disable: process.env.NODE_ENV === 'development', // Disabilita in sviluppo, abilita in produzione
 
   // Configurazione Workbox per il caching
@@ -53,3 +57,5 @@ const pwaConfig = withPWA({
 });
 
 export default pwaConfig(nextConfig);
+// --- Fine configurazione next-pwa ---
+
