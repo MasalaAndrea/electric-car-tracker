@@ -54,7 +54,8 @@ const pwaConfig = withPWA({
       { url: '/manifest.json', revision: null }, // Il manifest
       { url: '/android-chrome-192x192.png', revision: null }, // Icona 192x192
       { url: '/android-chrome-512x512.png', revision: null }, // Icona 512x512
-    ].concat(self.__WB_MANIFEST || []), // Concatena con il manifest generato automaticamente da Workbox
+      // Rimuovi la concatenazione di self.__WB_MANIFEST qui, Workbox lo gestisce internamente
+    ],
   },
 });
 
