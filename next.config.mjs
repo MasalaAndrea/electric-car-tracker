@@ -1,7 +1,7 @@
 // next.config.mjs
 
 // Force rebuild - Questo commento serve per forzare un nuovo deploy su Vercel.
-// Se hai già usato questo commento, puoi cambiarlo leggermente (es. "// Force rebuild 2") o aggiungerne un altro.
+// Se hai già usato questo commento, puoi cambiarlo leggermente (es. "// Force rebuild 3") o aggiungerne un altro.
 
 import withPWA from 'next-pwa';
 
@@ -47,15 +47,9 @@ const pwaConfig = withPWA({
         },
       },
     ],
-    // Aggiungi qui solo le risorse essenziali che Workbox potrebbe non precachare automaticamente
-    // Il manifest e le icone sono cruciali per l'installazione e l'offline
-    precacheManifest: [
-      { url: '/', revision: null }, // La homepage
-      { url: '/manifest.json', revision: null }, // Il manifest
-      { url: '/android-chrome-192x192.png', revision: null }, // Icona 192x192
-      { url: '/android-chrome-512x512.png', revision: null }, // Icona 512x512
-      // Rimuovi la concatenazione di self.__WB_MANIFEST qui, Workbox lo gestisce internamente
-    ],
+    // Rimuovi completamente la sezione precacheManifest.
+    // next-pwa con Workbox è in grado di generare il precache manifest
+    // automaticamente includendo i file di build di Next.js.
   },
 });
 
