@@ -1,5 +1,8 @@
 // app/layout.tsx
 
+// Force rebuild - Questo commento serve per forzare un nuovo deploy su Vercel.
+// Se hai già usato questo commento, puoi cambiarlo leggermente (es. "// Force rebuild 2") o aggiungerne un altro.
+
 import type React from "react";
 import type { Metadata } from "next";
 
@@ -40,3 +43,4 @@ export default function RootLayout({
     </html>
   );
 }
+

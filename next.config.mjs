@@ -1,6 +1,8 @@
 // next.config.mjs
 
-// Importa 'withPWA' usando la sintassi ES Module
+// Force rebuild - Questo commento serve per forzare un nuovo deploy su Vercel.
+// Se hai già usato questo commento, puoi cambiarlo leggermente (es. "// Force rebuild 2") o aggiungerne un altro.
+
 import withPWA from 'next-pwa';
 
 /** @type {import('next').NextConfig} */
@@ -58,4 +60,3 @@ const pwaConfig = withPWA({
 
 export default pwaConfig(nextConfig);
 // --- Fine configurazione next-pwa ---
-
